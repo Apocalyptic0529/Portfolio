@@ -1,0 +1,271 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #020E28, #61EAC0);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h3, p, h1, h2{
+    color: white;
+}
+
+header {
+    background: fixed;
+    background-color: #020E28;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;    
+}
+
+a {
+    text-decoration: none;
+}
+
+header .logo img {
+    max-width: 150px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 30px;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+nav ul li:hover {
+    transform: scale(1.2);
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    width: 100%;
+    color: transparent;
+    overflow: hidden;
+    position: relative;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 4em; /* Adjust this value to make the heading bigger */
+    margin: 0.5em 0;
+}
+
+.hero-content p {
+    font-size: 2em; /* Adjust this value to make the paragraph text bigger */
+    margin: 0.5em 0;
+}
+
+.hero-content{
+    z-index: 2;
+}
+
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500%;
+    height: 100%;
+    display: flex;
+    animation: slide 25s infinite;
+}
+
+.slide {
+    width: 20%;
+    transition: transform 1s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-20%); }
+    45% { transform: translateX(-20%); }
+    50% { transform: translateX(-40%); }
+    70% { transform: translateX(-40%); }
+    75% { transform: translateX(-60%); }
+    95% { transform: translateX(-60%); }
+    100% { transform: translateX(0); }
+}
+
+.newest-releases, .cpu, .gpu, .monitor, .mouse, .keyboard {
+    padding: 20px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    overflow-x: auto;
+}
+
+.product-item {
+    flex: 0 1 calc(20% - 20px);
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    transition: transform 0.3s;
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    flex-direction: column;
+}
+
+
+.product-item img {
+    width: 50%;
+    max-width: 100%;
+    max-height: 70%;
+    height: 50%;
+    object-fit: contain;
+}
+
+.product-item h3 {
+    margin: 10px 0;
+    height: 25%;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.upd{
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+
+@media (max-width: 1200px) {
+    .product-item {
+        flex: 0 1 calc(25% - 20px);
+    }
+}
+
+@media (max-width: 992px) {
+    .product-item {
+        flex: 0 1 calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-item {
+        flex: 0 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    .product-item {
+        flex: 0 1 calc(100% - 20px);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    padding: 2em;
+    flex-direction: column;
+}
+.about main p{
+    text-align: justify;
+}
+.about .logo{
+    transition: transform 0.3s;
+}
+.about .logo:hover{
+    transform: scale(1.2);
+}
+
+.contact main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 2em;
+    padding: 2em;
+    flex-direction: column;
+}
+.contact main p{
+    text-align: justify;
+    color: #88f4ab;
+    text-shadow: 
+    -1px -1px 0 black,  
+    1px -1px 0 black,
+    -1px  1px 0 black,
+    1px  1px 0 black;
+    
+}
+
+.contact main h1{
+    color: #88f4ab;
+    text-shadow: 
+    -1px -1px 0 black,  
+    1px -1px 0 black,
+    -1px  1px 0 black,
+    1px  1px 0 black;
+}
+.contact .logo{
+    transition: transform 0.3s;
+}
+.contact .logo:hover{
+    transform: scale(1.2);
+}
+.contact{
+    background-image: url('images/kaminganim.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
